@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Keeper</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Memory Keeper</h1>
+            <nav>
+                <button id="add-memory-btn">Add Memory</button>
+                <button id="view-map-btn">View Map</button>
+            </nav>
+        </header>
+        <main>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search memories...">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="travel">Travel</option>
+                    <option value="family">Family</option>
+                    <option value="work">Work</option>
+                    <option value="hobby">Hobby</option>
+                </select>
+            </div>
+            <div id="memories-container"></div>
+            <div id="map-container" style="display: none;"></div>
+        </main>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="memory-form">
+                    <input type="text" id="title" placeholder="Memory Title" required>
+                    <textarea id="message" placeholder="Your memory..." required></textarea>
+                    <input type="date" id="date" required>
+                    <select id="category" required>
+                        <option value="">Select a category</option>
+                        <option value="travel">Travel</option>
+                        <option value="family">Family</option>
+                        <option value="work">Work</option>
+                        <option value="hobby">Hobby</option>
+                    </select>
+                    <input type="file" id="image" accept="image/*" required>
+                    <button type="button" id="location-btn">Add Current Location</button>
+                    <input type="text" id="location" placeholder="Location" readonly>
+                    <button type="submit">Save Memory</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
